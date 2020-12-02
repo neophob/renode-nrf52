@@ -1,11 +1,11 @@
 # renode-nrf52
 
-Goal is to have a Nordic nrf52 binary running in Renode - see https://github.com/renode/renode and https://renode.io/
+Goal is to have a Nordic nrf52 binary running in Renode - see https://github.com/renode/renode and https://renode.io/. I used the latest official Renode v1.11 on OSX and a self compiled daily version (1st December).
 
-
-When run in renode, it freezes when entering the SVC_Handler:
+When run in renode, it freezes when entering the SVC_Handler (see `renode-verbose-log.txt` for more details):
 
 ```
+<snip>
 15:55:21.4908 [INFO] cpu: Entering function app_util_critical_region_enter at 0x27A64
 15:55:21.4908 [INFO] cpu: Entering function app_util_critical_region_enter at 0x27A66
 15:55:21.4908 [NOISY] cpu: Allocated 64B pointer at 0x140257097617280.
@@ -27,7 +27,6 @@ When run in renode, it freezes when entering the SVC_Handler:
 15:55:21.4911 [NOISY] cpu: Loop to itself detected
 15:55:21.4912 [NOISY] cpu: Deallocated a 64B pointer at 0x140257097617280.
 15:55:21.4912 [INFO] cpu: Entering function SVC_Handler (entry) at 0x262E6
-15:55:31.5944 [INFO] machine-0: GDB server with all CPUs started on port :3333
 ```
 
 Using gdb the backtrace looks like:
