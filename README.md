@@ -2,6 +2,12 @@
 
 Goal is to have a Nordic nrf52 binary running in Renode - see https://github.com/renode/renode and https://renode.io/. I used the latest official Renode v1.11 on OSX and a self compiled daily version (1st December).
 
+In this example I use:
+- the S132 softdevice, source is https://www.nordicsemi.com/Software-and-tools/Software/S132
+- gcc version is gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux
+- Nordic SDK is nRF5_SDK_15.3.0_59ac345, source is https://www.nordicsemi.com/eng/Products/Bluetooth-low-energy/nRF5-SDK
+- The ble_app_blinky.elf is the output of `SDK/examples/ble_peripheral/ble_app_blinky/pca10040/s132/armgcc`
+
 When run in renode, it freezes when entering the SVC_Handler (see `renode-verbose-log.txt` for more details):
 
 ```
