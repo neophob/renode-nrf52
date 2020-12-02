@@ -7,6 +7,8 @@ In this example I use:
 - gcc version is gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux
 - Nordic SDK is nRF5_SDK_15.3.0_59ac345, source is https://www.nordicsemi.com/eng/Products/Bluetooth-low-energy/nRF5-SDK
 - The ble_app_blinky.elf is the output of `SDK/examples/ble_peripheral/ble_app_blinky/pca10040/s132/armgcc`
+- I load the elf file and the softdevice seperate, I used the command `arm-none-eabi-objcopy -v -O binary -I ihex ./s132_nrf52_6.1.1_softdevice.hex ./s132.bin` to create the binary version of the softdevice
+- Same error is visible when the pca10056 and s140 combo is used
 
 When run in renode, it freezes when entering the SVC_Handler (see `renode-verbose-log.txt` for more details):
 
